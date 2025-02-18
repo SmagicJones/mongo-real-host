@@ -9,8 +9,11 @@
 .heading-wrapper {
   padding: 2em;
   text-align: center;
-  font-size: 3rem;
+  font-size: 2rem;
   font-family: monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .grid-wrapper {
@@ -65,4 +68,39 @@
 .image-wrapper img {
   width: 100%;
   border-radius: 1em;
+}
+
+.dashboard {
+  background: #eeeeee;
+  height: 100vw;
+}
+
+.dashboard-header {
+  background: black;
+  padding: 2em;
+  text-align: center;
+  color: #fff;
+  font-family: monospace;
+}
+
+.dashboard-links {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  padding: 2em;
+}
+
+.dashboard-links a {
+  text-decoration: none;
+  background: #000;
+  padding: 2em;
+  border-radius: 2em;
+  color: #fff;
+  font-family: monospace;
+}
+
+.dashboard-outlet-wrapper {
+  display: grid;
+  grid-template-columns: 100%;
+  padding: 2em;
 }
