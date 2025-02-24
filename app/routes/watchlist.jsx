@@ -22,6 +22,13 @@ export default function WatchList() {
               <div key={movie._id} className="movie-box">
                 <h3 className="movie-title">{movie.title}</h3>
                 <p className="p-4">{movie.plot}</p>
+                {movie.poster && (
+                  <img
+                    src={movie.poster}
+                    alt={movie.title}
+                    className="rounded"
+                  />
+                )}
                 <Form method="post">
                   <input name="deleteid" hidden defaultValue={movie._id} />
                   <Button>Delete</Button>
