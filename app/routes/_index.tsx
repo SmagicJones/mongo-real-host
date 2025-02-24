@@ -18,7 +18,7 @@ export default function Index() {
         <Link prefetch="render" to="/movies">
           All Movies
         </Link>
-        <Link prefetch="render" to="/search">
+        <Link prefetch="render" to="/dashboard">
           Search Movies
         </Link>
       </div>

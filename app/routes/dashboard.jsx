@@ -1,16 +1,22 @@
-import { Outlet } from "@remix-run/react";
-import { Link } from "@remix-run/react";
+import { Outlet, Link } from "@remix-run/react";
+import { Button } from "../components/ui/button";
 
 export default function Dashboard() {
   return (
     <div className="dashboard">
       <div className="dashboard-header">
-        <h1>I'm the dashboard</h1>
+        <div>
+          <h1>Search Movies</h1>
+          <Link to="/" prefetch="render">
+            <Button>Home</Button>
+          </Link>
+        </div>
       </div>
 
       <div className="dashboard-links">
-        <Link to="/dashboard/notes">Go to the notes</Link>
-        <Link to="/dashboard/beans">Go to beans</Link>
+        <Link to="/dashboard/year">Search by Year</Link>
+        <Link to="/dashboard/actor">Search by Actor</Link>
+        <Link to="/dashboard/director">Search by Director</Link>
       </div>
       <div className="dashboard-outlet-wrapper">
         <Outlet />
