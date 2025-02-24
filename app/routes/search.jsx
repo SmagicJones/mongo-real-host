@@ -8,7 +8,12 @@ export default function Search() {
   return (
     <main>
       <div className="heading-wrapper">
-        <h1 className="heading">Search</h1>
+        <div>
+          <h1 className="heading">Search</h1>
+          <Link to="/" prefetch="render">
+            <Button>Home</Button>
+          </Link>
+        </div>
       </div>
       <div className="form-wrapper">
         <Form method="post" className="form">

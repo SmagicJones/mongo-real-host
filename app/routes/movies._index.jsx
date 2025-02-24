@@ -1,5 +1,6 @@
 import { Link, useLoaderData } from "@remix-run/react";
 import { client } from "../utils/mongo.js";
+import { Button } from "../components/ui/button";
 
 export default function Movies() {
   const movies = useLoaderData();
@@ -7,7 +8,12 @@ export default function Movies() {
   return (
     <main>
       <div className="heading-wrapper">
-        <h1 className="heading">Movies</h1>
+        <div>
+          <h1 className="heading">Movies</h1>
+          <Link to="/" prefetch="render">
+            <Button>Home</Button>
+          </Link>
+        </div>
       </div>
       <div className="grid-wrapper">
         <div className="grid-container">
