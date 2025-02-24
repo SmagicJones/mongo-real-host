@@ -14,7 +14,7 @@ export default function Notes() {
       <div className="w-[100%] flex justify-center items-center p-4">
         <Form
           method="post"
-          className="grid md:grid-cols-2 gap-2 p-4 bg-slate-300 rounded max-w-[70vw]"
+          className="grid md:grid-cols-2 gap-2 p-4 bg-slate-300 rounded"
         >
           <label htmlFor="director">Enter Director</label>
           <input type="text" name="director" id="director" />
