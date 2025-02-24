@@ -8,8 +8,12 @@ import {
 } from "@remix-run/react";
 
 import styles from "~/css/styles.css?url";
+import tailwind from "~/tailwind.css?url";
 
-export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
+export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: tailwind },
+  { rel: "stylesheet", href: styles },
+];
 
 export default function App() {
   return (

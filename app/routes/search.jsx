@@ -6,6 +6,7 @@ export default function Search() {
 
   return (
     <main>
+      <p className="text-8xl">Testing</p>
       <div className="heading-wrapper">
         <h1 className="heading">Search</h1>
       </div>
@@ -15,7 +16,7 @@ export default function Search() {
           <input type="number" name="year" id="year" />
           {/* <label htmlFor="title">Enter Title</label>
           <input type="text" name="title" id="title" /> */}
-          <button>Year</button>
+          <button>Go</button>
         </Form>
       </div>
 
