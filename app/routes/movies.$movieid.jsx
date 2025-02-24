@@ -44,6 +44,7 @@ export default function Movie() {
             <></>
           ) : (
             <Form method="post">
+              <input hidden type="text" name="id" defaultValue={movie._id} />
               <input hidden name="movie" defaultValue={movie.title} />
               <input hidden type="text" name="plot" defaultValue={movie.plot} />
               <input
@@ -105,12 +106,18 @@ export async function loader({ params }) {
 export async function action({ request }) {
   const formData = await request.formData();
   const formEntry = Object.fromEntries(formData);
+  const id = formEntry.id;
   const movie = formEntry.movie;
   const plot = formEntry.plot;
   const poster = formEntry.poster;
 
   let db = await client.db("sample_mflix");
   let collection = await db.collection("watchlist");
-  await collection.insertOne({ title: movie, plot: plot, poster: poster });
+  await collection.insertOne({
+    movie_id: id,
+    title: movie,
+    plot: plot,
+    poster: poster,
+  });
   return movie;
 }

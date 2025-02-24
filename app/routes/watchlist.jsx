@@ -29,10 +29,15 @@ export default function WatchList() {
                     className="rounded"
                   />
                 )}
-                <Form method="post">
-                  <input name="deleteid" hidden defaultValue={movie._id} />
-                  <Button>Delete</Button>
-                </Form>
+                <div className="flex justify-center items-center gap-4 p-4">
+                  <Form method="post">
+                    <input name="deleteid" hidden defaultValue={movie._id} />
+                    <Button>Delete</Button>
+                  </Form>
+                  <Link to={`/movies/${movie.movie_id}`}>
+                    <Button>More Info</Button>
+                  </Link>
+                </div>
               </div>
             );
           })}
