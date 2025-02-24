@@ -19,15 +19,14 @@ export default function Search() {
         </Form>
       </div>
 
-      <section>
-        <div className="heading-wrapper">
-          <h1 className="heading">Movies</h1>
-        </div>
-        <div className="grid-wrapper">
-          <div className="grid-container">
-            {movies &&
-              movies.map((movie) => {
-                console.log(movie);
+      {movies && (
+        <section>
+          <div className="heading-wrapper">
+            <h1 className="heading">Movies</h1>
+          </div>
+          <div className="grid-wrapper">
+            <div className="grid-container">
+              {movies.map((movie) => {
                 return (
                   <Link
                     prefetch="render"
@@ -45,9 +44,10 @@ export default function Search() {
                   </Link>
                 );
               })}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </main>
   );
 }
