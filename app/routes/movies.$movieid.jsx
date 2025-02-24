@@ -1,11 +1,12 @@
-import { Link, useLoaderData } from "@remix-run/react";
+import { Link, useLoaderData, useActionData, Form } from "@remix-run/react";
 import { client } from "../utils/mongo.js";
 import { ObjectId } from "mongodb";
 import { Button } from "../components/ui/button";
 
 export default function Movie() {
   const movie = useLoaderData();
-  console.log(movie);
+
+  const returnedMovie = useActionData();
 
   return (
     <main>
@@ -38,6 +39,21 @@ export default function Movie() {
         </div>
       </div>
       <div className="single-movie-box">
+        <div className="flex justify-center gap-4">
+          {returnedMovie ? (
+            <></>
+          ) : (
+            <Form method="post">
+              <input hidden name="movie" defaultValue={movie.title} />
+              <Button>Add to List</Button>
+            </Form>
+          )}
+
+          <Link to="/watchlist">
+            <Button>Watchlist</Button>
+          </Link>
+        </div>
+
         <div>
           <p>{movie.fullplot}</p>
 
@@ -76,5 +92,16 @@ export async function loader({ params }) {
   let movie = await collection.findOne({
     _id: new ObjectId(id),
   });
+  return movie;
+}
+
+export async function action({ request }) {
+  const formData = await request.formData();
+  const formEntry = Object.fromEntries(formData);
+  const movie = formEntry.movie;
+
+  let db = await client.db("sample_mflix");
+  let collection = await db.collection("watchlist");
+  await collection.insertOne({ title: movie });
   return movie;
 }

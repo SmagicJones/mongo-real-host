@@ -2,7 +2,7 @@ import { Link, useLoaderData } from "@remix-run/react";
 import { client } from "../utils/mongo.js";
 import { Button } from "../components/ui/button";
 
-export default function Movies() {
+export default function WatchList() {
   const movies = useLoaderData();
   return (
     <main>
@@ -14,16 +14,11 @@ export default function Movies() {
           </Link>
         </div>
       </div>
-      <div className="grid-wrapper">
-        <div className="grid-container">
+      <div className="flex justify-center items-center p-4">
+        <div className="grid md:grid-cols-4 gap-4">
           {movies.map((movie) => {
             return (
-              <Link
-                prefetch="render"
-                to={`/movies/${movie._id}`}
-                key={movie._id}
-                className="movie-box"
-              >
+              <Link prefetch="render" key={movie._id} className="movie-box">
                 <h3 className="movie-title">{movie.title}</h3>
                 <div className="image-wrapper"></div>
                 {movie.poster && (
@@ -43,7 +38,7 @@ export default function Movies() {
 
 export async function loader() {
   let db = await client.db("sample_mflix");
-  let collection = await db.collection("movies");
+  let collection = await db.collection("watchlist");
   let movies = await collection.find({}).limit(10).toArray();
   return movies;
 }

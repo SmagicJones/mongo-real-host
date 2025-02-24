@@ -69,7 +69,7 @@ export async function action({ request }) {
   let collection = await db.collection("movies");
   let movies = await collection
     .find({ directors: director })
-    .limit(200)
+    .limit(10)
     .toArray();
 
   return movies;

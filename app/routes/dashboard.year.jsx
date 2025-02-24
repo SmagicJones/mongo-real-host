@@ -66,12 +66,10 @@ export async function action({ request }) {
   const formEntry = Object.fromEntries(formData);
   const year = formEntry.year;
   const yearNum = Number(year);
-  // const title = formEntry.title;
-  // const actor = formEntry.actor;
 
   let db = await client.db("sample_mflix");
   let collection = await db.collection("movies");
-  let movies = await collection.find({ year: yearNum }).limit(200).toArray();
+  let movies = await collection.find({ year: yearNum }).limit(10).toArray();
 
   return movies;
 }
