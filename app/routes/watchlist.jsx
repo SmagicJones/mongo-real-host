@@ -34,7 +34,7 @@ export default function WatchList() {
                     <input name="deleteid" hidden defaultValue={movie._id} />
                     <Button>Delete</Button>
                   </Form>
-                  <Link to={`/movies/${movie.movie_id}`}>
+                  <Link to={`/movies/${new ObjectId(movie._id)}`}>
                     <Button>More Info</Button>
                   </Link>
                 </div>
