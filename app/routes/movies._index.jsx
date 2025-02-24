@@ -38,6 +38,6 @@ export default function Movies() {
 export async function loader() {
   let db = await client.db("sample_mflix");
   let collection = await db.collection("movies");
-  let movies = await collection.find({ year: 2012 }).limit(20).toArray();
+  let movies = await collection.find({}).limit(200).toArray();
   return movies;
 }

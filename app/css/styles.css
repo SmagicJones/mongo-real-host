@@ -104,3 +104,28 @@
   grid-template-columns: 100%;
   padding: 2em;
 }
+
+.form-wrapper {
+  padding: 2em;
+  border-radius: 1em;
+  margin: 1em;
+  background: #000;
+  color: #fff;
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 1em;
+}
+
+search-button {
+  background: #fff;
+  padding: 1em;
+  border-radius: 1em;
+  color: #000;
+}
