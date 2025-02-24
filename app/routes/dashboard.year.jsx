@@ -17,7 +17,13 @@ export default function Notes() {
           className="grid md:grid-cols-2 gap-2 p-4 bg-slate-300 rounded"
         >
           <label htmlFor="year">Enter a Year</label>
-          <input type="number" name="year" id="year" required />
+          <input
+            type="number"
+            name="year"
+            id="year"
+            className="rounded"
+            required
+          />
           <Button>Search</Button>
         </Form>
       </div>

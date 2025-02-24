@@ -17,8 +17,13 @@ export default function Notes() {
           className="grid md:grid-cols-2 gap-2 p-4 bg-slate-300 rounded"
         >
           <label htmlFor="director">Enter Director</label>
-          <input type="text" name="director" id="director" />
-          <Button>Go</Button>
+          <input
+            type="text"
+            name="director"
+            id="director"
+            className="rounded"
+          />
+          <Button>Search</Button>
         </Form>
       </div>
 
