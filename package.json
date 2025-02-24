@@ -13,12 +13,18 @@
   "dependencies": {
     "@netlify/functions": "^2.6.0",
     "@netlify/remix-adapter": "^2.3.1",
+    "@radix-ui/react-slot": "^1.1.2",
     "@remix-run/node": "^2.15.3",
     "@remix-run/react": "^2.15.3",
     "@remix-run/serve": "^2.15.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "dotenv": "^16.4.7",
     "isbot": "^4.1.0",
-    "mongodb": "^6.13.0"
+    "lucide-react": "^0.475.0",
+    "mongodb": "^6.13.0",
+    "tailwind-merge": "^3.0.2",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@remix-run/dev": "^2.15.3",

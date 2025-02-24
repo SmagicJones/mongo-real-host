@@ -1,12 +1,12 @@
 import { client } from "../utils/mongo.js";
 import { Form, Link, useActionData, useLoaderData } from "@remix-run/react";
 
+import { Button } from "../components/ui/button";
 export default function Search() {
   const movies = useActionData();
 
   return (
     <main>
-      <p className="text-8xl">Testing</p>
       <div className="heading-wrapper">
         <h1 className="heading">Search</h1>
       </div>
@@ -16,7 +16,7 @@ export default function Search() {
           <input type="number" name="year" id="year" />
           {/* <label htmlFor="title">Enter Title</label>
           <input type="text" name="title" id="title" /> */}
-          <button>Go</button>
+          <Button>Go</Button>
         </Form>
       </div>
 
