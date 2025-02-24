@@ -32,6 +32,7 @@ export default function Movies() {
                     <img className="image" src={movie.poster} />
                   </div>
                 )}
+                <p className="p-4">{movie.plot}</p>
               </Link>
             );
           })}

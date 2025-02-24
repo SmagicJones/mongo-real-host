@@ -19,6 +19,8 @@ export default function Search() {
         <Form method="post" className="form">
           <label htmlFor="year">Enter a Year</label>
           <input type="number" name="year" id="year" />
+          {/* <label htmlFor="actor">Enter Actor</label>
+          <input type="text" name="actor" id="actor" /> */}
           {/* <label htmlFor="title">Enter Title</label>
           <input type="text" name="title" id="title" /> */}
           <Button>Go</Button>
@@ -64,6 +66,7 @@ export async function action({ request }) {
   const year = formEntry.year;
   const yearNum = Number(year);
   // const title = formEntry.title;
+  // const actor = formEntry.actor;
 
   let db = await client.db("sample_mflix");
   let collection = await db.collection("movies");
