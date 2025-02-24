@@ -11,15 +11,14 @@ export default function Notes() {
           <h1 className="heading">Search by Year</h1>
         </div>
       </div>
-      <div className="form-wrapper">
-        <Form method="post" className="form">
+      <div className="w-[100%] flex justify-center items-center p-4">
+        <Form
+          method="post"
+          className="grid md:grid-cols-2 gap-2 p-4 bg-slate-50 rounded"
+        >
           <label htmlFor="year">Enter a Year</label>
-          <input type="number" name="year" id="year" />
-          {/* <label htmlFor="actor">Enter Actor</label>
-        <input type="text" name="actor" id="actor" /> */}
-          {/* <label htmlFor="title">Enter Title</label>
-        <input type="text" name="title" id="title" /> */}
-          <Button>Go</Button>
+          <input type="number" name="year" id="year" required />
+          <Button>Search</Button>
         </Form>
       </div>
 

@@ -3,7 +3,7 @@ import { Button } from "../components/ui/button";
 
 export default function Dashboard() {
   return (
-    <div className="dashboard">
+    <div className="">
       <div className="dashboard-header">
         <div>
           <h1>Search Movies</h1>
@@ -13,10 +13,22 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <div className="dashboard-links">
-        <Link to="/dashboard/year">Search by Year</Link>
-        <Link to="/dashboard/actor">Search by Actor</Link>
-        <Link to="/dashboard/director">Search by Director</Link>
+      <div className="grid md:grid-cols-3 gap-4 pt-4">
+        <Link to="/dashboard/year" className="flex justify-center items-center">
+          <Button>Search by Year</Button>
+        </Link>
+        <Link
+          to="/dashboard/actor"
+          className="flex justify-center items-center"
+        >
+          <Button>Search by Actor</Button>
+        </Link>
+        <Link
+          to="/dashboard/director"
+          className="flex justify-center items-center"
+        >
+          <Button>Search by Director</Button>
+        </Link>
       </div>
       <div className="dashboard-outlet-wrapper">
         <Outlet />
