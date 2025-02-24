@@ -7,7 +7,7 @@ export default function Dashboard() {
       <div className="dashboard-header">
         <div>
           <h1>Search Movies</h1>
-          <Link to="/" prefetch="render">
+          <Link to="/" prefetch="render" className="p-4">
             <Button>Home</Button>
           </Link>
         </div>

@@ -11,8 +11,11 @@ export default function Notes() {
           <h1 className="heading">Search By Director</h1>
         </div>
       </div>
-      <div className="form-wrapper">
-        <Form method="post" className="form">
+      <div className="w-[100%] flex justify-center items-center p-4">
+        <Form
+          method="post"
+          className="grid md:grid-cols-2 gap-2 p-4 bg-slate-300 rounded max-w-[70vw]"
+        >
           <label htmlFor="director">Enter Director</label>
           <input type="text" name="director" id="director" />
           <Button>Go</Button>

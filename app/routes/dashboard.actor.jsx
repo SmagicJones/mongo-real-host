@@ -11,13 +11,20 @@ export default function Notes() {
           <h1 className="heading">Search By Actor</h1>
         </div>
       </div>
-      <div className="form-wrapper bg-lime-50">
-        <Form method="post" className="form">
+      <div className="w-[100%] flex justify-center items-center p-4">
+        <Form
+          method="post"
+          className="grid md:grid-cols-2 gap-2 p-4 bg-slate-300 rounded"
+        >
           <label htmlFor="actor">Enter Actor</label>
-          <input type="text" name="actor" id="actor" />
-          {/* <label htmlFor="title">Enter Title</label>
-        <input type="text" name="title" id="title" /> */}
-          <Button>Go</Button>
+          <input
+            type="text"
+            name="actor"
+            id="actor"
+            className="rounded"
+            required
+          />
+          <Button>Search</Button>
         </Form>
       </div>
 
