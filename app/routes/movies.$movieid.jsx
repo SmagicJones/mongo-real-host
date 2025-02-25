@@ -41,7 +41,9 @@ export default function Movie() {
       <div className="single-movie-box">
         <div className="flex justify-center gap-4">
           {returnedMovie ? (
-            <></>
+            <Link to="/watchlist">
+              <Button>Watchlist</Button>
+            </Link>
           ) : (
             <Form method="post">
               <input hidden type="text" name="id" defaultValue={movie._id} />
@@ -56,10 +58,6 @@ export default function Movie() {
               <Button>Add to List</Button>
             </Form>
           )}
-
-          <Link to="/watchlist">
-            <Button>Watchlist</Button>
-          </Link>
         </div>
 
         <div>
