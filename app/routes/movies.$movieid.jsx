@@ -16,6 +16,7 @@ export default function Movie() {
           <Link to="/movies" prefetch="render">
             <Button>Back to Movies</Button>
           </Link>
+
           <div>
             <ul className="text-sm p-4">
               <li>{movie.runtime} Minutes</li>
@@ -87,6 +88,22 @@ export default function Movie() {
           )}
         </div>
       </div>
+
+      {/* <div className="grid grid-cols-1 p-4">
+        <h3 className="text-center text-2xl p-4">Comments</h3>
+        <div className="rounded bg-slate-500 p-4">
+          <h5 className="text-center">Add a comment</h5>
+          <div className="grid md:grid-cols-2 gap-4 p-2">
+            <div>
+              <Form method="post">
+                <input type="text" name="comment" id="comment" />
+                <Button>Add Comment</Button>
+              </Form>
+            </div>
+            <div></div>
+          </div>
+        </div>
+      </div> */}
     </main>
   );
 }

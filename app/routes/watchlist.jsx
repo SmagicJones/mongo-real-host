@@ -1,4 +1,4 @@
-import { Link, useLoaderData, Form } from "@remix-run/react";
+import { Link, useLoaderData, Form, Outlet } from "@remix-run/react";
 import { client } from "../utils/mongo.js";
 import { Button } from "../components/ui/button";
 import { ObjectId } from "mongodb";
@@ -21,6 +21,13 @@ export default function WatchList() {
             return (
               <div key={movie._id} className="movie-box">
                 <h3 className="movie-title">{movie.title}</h3>
+
+                <Link prefetch="render" to={`/watchlist/${movie._id}`}>
+                  Like
+                </Link>
+                <Outlet />
+
+                {movie.like && <div className="p-4">{movie.like}</div>}
                 <p className="p-4">{movie.plot}</p>
                 {movie.poster && (
                   <img
