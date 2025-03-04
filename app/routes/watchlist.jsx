@@ -9,7 +9,7 @@ export default function WatchList() {
     <main>
       <div className="heading-wrapper">
         <div>
-          <h1 className="heading">Movies</h1>
+          <h1 className="heading">The Watchlist</h1>
           <Link to="/" prefetch="render">
             <Button>Home</Button>
           </Link>

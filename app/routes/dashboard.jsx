@@ -29,6 +29,9 @@ export default function Dashboard() {
         >
           <Button>Search by Director</Button>
         </Link>
+        <Link to="/watchlist" className="flex justify-center items-center">
+          <Button>Go to the watchlist</Button>
+        </Link>
       </div>
       <div className="dashboard-outlet-wrapper">
         <Outlet />

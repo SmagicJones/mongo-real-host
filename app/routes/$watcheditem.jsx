@@ -26,11 +26,15 @@ export default function Item() {
             </ul>
 
             <div>
-              <h3 className="text-2xl">Your Comment</h3>
-              <div className="text-sm p-4">{movie.comment}</div>
+              <h3 className="text-xl">Your Comment</h3>
+              {movie.comment ? (
+                <div className="text-sm p-4">{movie.comment}</div>
+              ) : (
+                <div className="text-sm p-4">...</div>
+              )}
             </div>
             <div className="flex justify-center items-center">
-              <Form method="post" className="text-black grid gap-2">
+              <Form method="post" className="text-black grid grid-cols-1 gap-2">
                 <input
                   type="text"
                   name="comment"
