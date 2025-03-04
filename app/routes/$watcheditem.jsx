@@ -5,10 +5,7 @@ import { Button } from "../components/ui/button";
 
 export default function Item() {
   const movie = useLoaderData();
-  // console.log(movie);
-  const newDoc = useActionData();
-  // console.log(newDoc, "New Doc!!!");
-  console.log(movie);
+
   return (
     <main>
       <div className="heading-wrapper">
@@ -32,66 +29,24 @@ export default function Item() {
               <h3 className="text-2xl">Your Comment</h3>
               <div className="text-sm p-4">{movie.comment}</div>
             </div>
-            <Form method="post" className="text-black grid gap-2">
-              <input
-                type="text"
-                name="comment"
-                id="comment"
-                className="border"
-              />
+            <div className="flex justify-center items-center">
+              <Form method="post" className="text-black grid gap-2">
+                <input
+                  type="text"
+                  name="comment"
+                  id="comment"
+                  className="border"
+                />
 
-              <input type="hidden" name="movieid" defaultValue={movie._id} />
-              <Button>Add Comment</Button>
-            </Form>
+                <input type="hidden" name="movieid" defaultValue={movie._id} />
+                <Button>Add Comment</Button>
+              </Form>
+            </div>
           </div>
         </div>
       </div>
       <div className="single-movie-box">
-        {/* <div className="flex justify-center gap-4">
-          <div className="grid grid-cols-1 p-4">
-            <h3 className="text-center text-2xl p-4">Comments</h3>
-            <div className="rounded bg-slate-500 p-4">
-              <h5 className="text-center">Add a comment</h5>
-              <div className="grid md:grid-cols-2 gap-4 p-2">
-                <div>
-                  <Form method="post" className="text-black">
-                    <input type="text" name="comment" id="comment" />
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <input
-                        type="hidden"
-                        name="movieid"
-                        defaultValue={movie._id}
-                      />
-                      <Button>Add Comment</Button>
-                    </div>
-                  </Form>
-                </div>
-                <div></div>
-              </div>
-            </div>
-          </div>
-        </div> */}
-
         <div>
-          <p>{movie.fullplot}</p>
-
-          {movie.cast && (
-            <ul className="p-4">
-              <b>Starring:</b>
-              {movie.cast.map((actor, index) => {
-                return <li key={index}>{actor}</li>;
-              })}
-            </ul>
-          )}
-
-          {movie.writers && (
-            <ul className="p-4 text-sm">
-              <b>Written By:</b>
-              {movie.writers.map((writer, index) => {
-                return <li key={index}>{writer}</li>;
-              })}
-            </ul>
-          )}
           {movie.poster && (
             <div className="image-wrapper">
               <img src={movie.poster} alt={movie.title} />
