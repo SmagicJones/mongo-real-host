@@ -19,7 +19,7 @@ export default function Index() {
           All Movies
         </Link>
         <Link prefetch="render" to="/dashboard">
-          Search Movies
+          Dashboard
         </Link>
       </div>
     </main>

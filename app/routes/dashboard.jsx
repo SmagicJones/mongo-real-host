@@ -6,30 +6,24 @@ export default function Dashboard() {
     <div className="">
       <div className="dashboard-header">
         <div>
-          <h1>Search Movies</h1>
+          <h1 className="text-2xl p-4">Welcome to the Dashboard</h1>
           <Link to="/" prefetch="render" className="p-4">
             <Button>Home</Button>
           </Link>
         </div>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-4 pt-4">
-        <Link to="/dashboard/year" className="flex justify-center items-center">
+      <div className="grid md:grid-cols-4 gap-4 pt-4">
+        <Link to="/dashboard/year">
           <Button>Search by Year</Button>
         </Link>
-        <Link
-          to="/dashboard/actor"
-          className="flex justify-center items-center"
-        >
+        <Link to="/dashboard/actor">
           <Button>Search by Actor</Button>
         </Link>
-        <Link
-          to="/dashboard/director"
-          className="flex justify-center items-center"
-        >
+        <Link to="/dashboard/director">
           <Button>Search by Director</Button>
         </Link>
-        <Link to="/watchlist" className="flex justify-center items-center">
+        <Link to="/watchlist">
           <Button>Go to the watchlist</Button>
         </Link>
       </div>
