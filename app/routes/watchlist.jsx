@@ -21,13 +21,6 @@ export default function WatchList() {
             return (
               <div key={movie._id} className="movie-box">
                 <h3 className="movie-title">{movie.title}</h3>
-
-                <Link prefetch="render" to={`/watchlist/${movie._id}`}>
-                  Like
-                </Link>
-                <Outlet />
-
-                {movie.like && <div className="p-4">{movie.like}</div>}
                 <p className="p-4">{movie.plot}</p>
                 {movie.poster && (
                   <img
@@ -36,6 +29,24 @@ export default function WatchList() {
                     className="rounded"
                   />
                 )}
+                <div className="p-4">
+                  {movie.comment ? (
+                    <>
+                      <div className="p-4">
+                        <h3 className="p-2">You Say...</h3>
+                        <p>{movie.comment}</p>
+                      </div>
+                      <Link to={`/${movie._id}`} className="p-4">
+                        <Button>Change your Comment</Button>
+                      </Link>
+                    </>
+                  ) : (
+                    <Link to={`/${movie._id}`} className="p-4">
+                      <Button>Make a Comment</Button>
+                    </Link>
+                  )}
+                </div>
+
                 <div className="flex justify-center items-center gap-4 p-4">
                   <Form method="post">
                     <input name="deleteid" hidden defaultValue={movie._id} />
