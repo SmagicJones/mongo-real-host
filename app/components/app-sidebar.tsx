@@ -30,17 +30,19 @@ const data = {
   user: {
     name: "shadcn",
     email: "m@example.com",
+    avatar:
+      "https://3dgbire.com/cdn/shop/files/Factor4-Product-small_1512x.webp?v=1716969569",
   },
   navMain: [
     {
-      title: "Playground",
-      url: "#",
+      title: "Movies",
+      url: "/",
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
-          title: "History",
-          url: "#",
+          title: "dashboard",
+          url: "/dashboard",
         },
         {
           title: "Starred",
@@ -90,29 +92,6 @@ const data = {
         },
         {
           title: "Changelog",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Settings",
-      url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
           url: "#",
         },
       ],
