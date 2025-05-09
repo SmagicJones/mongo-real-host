@@ -13,7 +13,7 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-4 gap-4 pt-4">
+      <div className="bob-buttons md:flex justify-center items-center grid grid-cols-2 gap-4 m-4 w-screen ">
         <Link to="/dashboard/year">
           <Button>Search by Year</Button>
         </Link>

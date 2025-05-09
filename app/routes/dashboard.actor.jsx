@@ -1,9 +1,16 @@
 import { client } from "../utils/mongo.js";
 import { Form, Link, useActionData, useLoaderData } from "@remix-run/react";
 import { Button } from "../components/ui/button";
+import { useRef } from "react";
 
 export default function Notes() {
   const movies = useActionData();
+  const formRef = useRef();
+
+  if (formRef.current) {
+    formRef.current.reset();
+  }
+
   return (
     <main>
       <div className="heading-wrapper">
@@ -13,6 +20,7 @@ export default function Notes() {
       </div>
       <div className="w-[100%] flex justify-center items-center p-4">
         <Form
+          ref={formRef}
           method="post"
           className="grid md:grid-cols-2 gap-2 p-4 bg-slate-300 rounded"
         >
@@ -65,10 +73,16 @@ export async function action({ request }) {
   const formData = await request.formData();
   const formEntry = Object.fromEntries(formData);
   const actor = formEntry.actor;
+  const santisedActor = actor.replace(/(^\w{1})|(\s+\w{1})/g, (letter) =>
+    letter.toUpperCase()
+  );
 
   let db = await client.db("sample_mflix");
   let collection = await db.collection("movies");
-  let movies = await collection.find({ cast: actor }).limit(10).toArray();
+  let movies = await collection
+    .find({ cast: santisedActor })
+    .limit(10)
+    .toArray();
 
   return movies;
 }
