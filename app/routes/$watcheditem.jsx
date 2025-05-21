@@ -2,9 +2,16 @@ import { useLoaderData, useActionData, Link, Form } from "@remix-run/react";
 import { client } from "../utils/mongo.js";
 import { ObjectId } from "mongodb";
 import { Button } from "../components/ui/button";
+import { useRef } from "react";
 
 export default function Item() {
   const movie = useLoaderData();
+
+  const formRef = useRef();
+
+  if (formRef.current) {
+    formRef.current.reset();
+  }
 
   return (
     <main>
@@ -34,7 +41,11 @@ export default function Item() {
               )}
             </div>
             <div className="flex justify-center items-center">
-              <Form method="post" className="text-black grid grid-cols-1 gap-2">
+              <Form
+                method="post"
+                ref={formRef}
+                className="text-black grid grid-cols-1 gap-2"
+              >
                 <input
                   type="text"
                   name="comment"

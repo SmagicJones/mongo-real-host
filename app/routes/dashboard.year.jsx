@@ -1,9 +1,15 @@
 import { client } from "../utils/mongo.js";
 import { Form, Link, useActionData, useLoaderData } from "@remix-run/react";
 import { Button } from "../components/ui/button";
+import { useRef } from "react";
 
 export default function Notes() {
   const movies = useActionData();
+  const formRef = useRef();
+
+  if (formRef.current) {
+    formRef.current.reset();
+  }
   return (
     <main>
       <div className="heading-wrapper">
@@ -14,6 +20,7 @@ export default function Notes() {
       <div className="w-[100%] flex justify-center items-center p-4">
         <Form
           method="post"
+          ref={formRef}
           className="grid md:grid-cols-2 gap-2 p-4 bg-slate-300 rounded"
         >
           <label htmlFor="year">Enter a Year</label>
